@@ -138,7 +138,7 @@ include "connect.php";
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Farah </span>
+                        <span>Copyright &copy; Wafa Herchi </span>
                     </div>
                 </div>
             </footer>

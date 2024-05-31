@@ -49,6 +49,24 @@
           
 </li>
 
+<li class="nav-item">
+    <a class="nav-link" href="manage_users.php">
+        <i class="fas fa-fw fa-cog"></i>
+        <span>Manage Users</span>
+    </a>
+   
+          
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="manage_orders.php">
+        <i class="fas fa-fw fa-cog"></i>
+        <span>Manage Orders</span>
+    </a>
+   
+          
+</li>
+
 
 <!-- Divider -->
 <!--

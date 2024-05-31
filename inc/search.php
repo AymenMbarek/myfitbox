@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("localhost", "root", "", "fitboxx");
+$link = mysqli_connect("localhost", "root", "", "database");
 
 if(isset($_REQUEST["term"])){
     // Prepare a select statement

@@ -268,7 +268,7 @@ include('connect.php');
                   <h3 class="font-size-lg text-uppercase cs-from-left cs-delay-1"></h3>
                   <h2 class="display-2 mb-lg-5 pb-3 cs-from-left text-light">Changer votre style</h2>
                   <div class="mb-4 cs-scale-up cs-delay-2">
-                    <a href="shop-catalog.html" class="btn btn-primary btn-lg">Voir nos plats</a>
+                    <a href="nosplats.php" class="btn btn-primary btn-lg">Voir nos plats</a>
                   </div>
                 </div>
               </div>
@@ -470,7 +470,7 @@ include('connect.php');
        </div>
          </div>
           <div class="text-center pt-4 pt-md-5">
-            <a href="shop-catalog.html" class="btn btn-outline-primary btn-lg">Voir tous les plats </a>
+            <a href="nosplats.php" class="btn btn-outline-primary btn-lg">Voir tous les plats </a>
           </div>
         </div>
   

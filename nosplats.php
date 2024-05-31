@@ -64,7 +64,7 @@ if (isset($_SESSION['nom_user'])) {
 
     <div class="container">
         <div class="row mt-3 align-items-center">
-            <div class="col-4"><a href="homepage.html"><img src="img/logo.png" class="logo img-fluid" alt=""></a> </div>
+            <div class="col-4"><a href="index.php"><img src="img/logo.png" class="logo img-fluid" alt=""></a> </div>
             <div class="searchbox col-4">
                 <form class="d-flex">
                     <input class="form-control border-0 search rounded-pill" type="search" placeholder="Rechercher des plats" aria-label="Search">

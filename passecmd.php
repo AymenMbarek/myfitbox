@@ -40,7 +40,7 @@ if (!empty($_SESSION["shopping_cart"])) {
                             <div class='col-sm-12 text-center'>
                                 <img src='./img/emptycart.png' width='450' height='450' class='img-fluid mb-4 mr-3'>
                                 <h3><strong>Votre panier est vide</strong></h3>
-                                <h4>Ajoutez quelque chose pour me rendre heureux :)</h4>
+                                <h4>Ajoutez quelque chose </h4>
                                 <a href='objectifs.php' class='btn rounded-pill m-3' data-abc='true' style='background-color:#d6c900; font-size:20px; font-weight:600;'>Continue le shopping</a>
                             </div>
                         </div>

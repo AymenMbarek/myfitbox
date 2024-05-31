@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Feb 11, 2021 at 10:18 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Hôte : 127.0.0.1
+-- Généré le : ven. 31 mai 2024 à 14:12
+-- Version du serveur : 10.4.28-MariaDB
+-- Version de PHP : 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,23 +18,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fit`
+-- Base de données : `database`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrateur`
+-- Structure de la table `administrateur`
 --
 
 CREATE TABLE `administrateur` (
   `id_admin` int(11) NOT NULL,
   `email` varchar(40) NOT NULL,
   `motdepasse` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `administrateur`
+-- Déchargement des données de la table `administrateur`
 --
 
 INSERT INTO `administrateur` (`id_admin`, `email`, `motdepasse`) VALUES
@@ -45,7 +44,7 @@ INSERT INTO `administrateur` (`id_admin`, `email`, `motdepasse`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorie`
+-- Structure de la table `categorie`
 --
 
 CREATE TABLE `categorie` (
@@ -53,10 +52,10 @@ CREATE TABLE `categorie` (
   `nom_cat` varchar(20) NOT NULL,
   `image_cat` varchar(500) NOT NULL,
   `descrip_cat` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `categorie`
+-- Déchargement des données de la table `categorie`
 --
 
 INSERT INTO `categorie` (`id_cat`, `nom_cat`, `image_cat`, `descrip_cat`) VALUES
@@ -67,7 +66,7 @@ INSERT INTO `categorie` (`id_cat`, `nom_cat`, `image_cat`, `descrip_cat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commande`
+-- Structure de la table `commande`
 --
 
 CREATE TABLE `commande` (
@@ -79,10 +78,10 @@ CREATE TABLE `commande` (
   `livraison` varchar(99) DEFAULT NULL,
   `paiement` varchar(99) DEFAULT NULL,
   `statuscmd` varchar(99) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `commande`
+-- Déchargement des données de la table `commande`
 --
 
 INSERT INTO `commande` (`id_cmd`, `date_cmd`, `id_user`, `note`, `total`, `livraison`, `paiement`, `statuscmd`) VALUES
@@ -91,16 +90,13 @@ INSERT INTO `commande` (`id_cmd`, `date_cmd`, `id_user`, `note`, `total`, `livra
 (106, '2021-02-08', 36, 'note', 16, 'adomicile', 'credit-card', 'en-attente'),
 (107, '2021-02-08', 36, 'note', 16, 'adomicile', 'credit-card', 'en-attente'),
 (108, '2021-02-08', 36, 'note', 20, 'adomicile', 'credit-card', 'en-attente'),
-(109, '2021-02-08', 36, 'manich disponible demain', 200, 'magasin', 'credit-card', 'en-attente'),
 (110, '2021-02-08', 36, '', 1400, 'adomicile', 'livraison', 'en-attente'),
-(111, '2021-02-08', 36, 'manich disponible demain', 1400, 'adomicile', 'livraison', 'en-attente'),
-(112, '2021-02-08', 36, 'manich disponible demain', 6000, 'adomicile', 'livraison', 'en-attente'),
 (113, '2021-02-08', 36, '', 287, 'adomicile', 'credit-card', 'en-attente');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `etre_commande`
+-- Structure de la table `etre_commande`
 --
 
 CREATE TABLE `etre_commande` (
@@ -108,10 +104,10 @@ CREATE TABLE `etre_commande` (
   `id_cmd` int(11) NOT NULL,
   `Qte` int(11) NOT NULL,
   `jours` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `etre_commande`
+-- Déchargement des données de la table `etre_commande`
 --
 
 INSERT INTO `etre_commande` (`id_plat`, `id_cmd`, `Qte`, `jours`) VALUES
@@ -120,10 +116,7 @@ INSERT INTO `etre_commande` (`id_plat`, `id_cmd`, `Qte`, `jours`) VALUES
 (43, 106, 1, 1),
 (43, 107, 1, 1),
 (43, 108, 6, 1),
-(43, 109, 2, 1),
 (43, 110, 7, 1),
-(43, 111, 0, 1),
-(43, 112, 30, 1),
 (43, 113, 0, 1),
 (64, 113, 0, 1),
 (61, 113, 0, 1),
@@ -132,7 +125,30 @@ INSERT INTO `etre_commande` (`id_plat`, `id_cmd`, `Qte`, `jours`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `plat`
+-- Structure de la table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `message` text NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `messages`
+--
+
+INSERT INTO `messages` (`id`, `username`, `message`, `timestamp`) VALUES
+(1, 'test', 'test', '2024-05-31 12:00:34'),
+(2, 'test', 'cava ou quoi', '2024-05-31 12:00:43'),
+(3, 'wafa', 'bonjour', '2024-05-31 12:01:34'),
+(4, 'sarra', 'bonjour wafa', '2024-05-31 12:01:53');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `plat`
 --
 
 CREATE TABLE `plat` (
@@ -145,10 +161,10 @@ CREATE TABLE `plat` (
   `proteine` int(20) DEFAULT NULL,
   `id_cat` int(11) NOT NULL,
   `image` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `plat`
+-- Déchargement des données de la table `plat`
 --
 
 INSERT INTO `plat` (`id_plat`, `nomplat`, `prix`, `nbr_calories`, `ingredients`, `graisse`, `proteine`, `id_cat`, `image`) VALUES
@@ -162,7 +178,7 @@ INSERT INTO `plat` (`id_plat`, `nomplat`, `prix`, `nbr_calories`, `ingredients`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utilisateur`
+-- Structure de la table `utilisateur`
 --
 
 CREATE TABLE `utilisateur` (
@@ -174,10 +190,10 @@ CREATE TABLE `utilisateur` (
   `cp` int(4) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `motdepasse` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `utilisateur`
+-- Déchargement des données de la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id_user`, `nom_user`, `prenom_user`, `telephone`, `adresse`, `cp`, `email`, `motdepasse`) VALUES
@@ -214,101 +230,113 @@ INSERT INTO `utilisateur` (`id_user`, `nom_user`, `prenom_user`, `telephone`, `a
 (36, 'ayoub', 'Fatnassi', 25774039, '17 rue atrichaa cite anber', 2021, 'ayoub@gmail.com', 'hous');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `administrateur`
+-- Index pour la table `administrateur`
 --
 ALTER TABLE `administrateur`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `categorie`
+-- Index pour la table `categorie`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`id_cat`);
 
 --
--- Indexes for table `commande`
+-- Index pour la table `commande`
 --
 ALTER TABLE `commande`
   ADD PRIMARY KEY (`id_cmd`),
   ADD KEY `id_user_` (`id_user`);
 
 --
--- Indexes for table `etre_commande`
+-- Index pour la table `etre_commande`
 --
 ALTER TABLE `etre_commande`
   ADD KEY `idx_plat` (`id_plat`),
   ADD KEY `idx_cmd` (`id_cmd`);
 
 --
--- Indexes for table `plat`
+-- Index pour la table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `plat`
 --
 ALTER TABLE `plat`
   ADD PRIMARY KEY (`id_plat`),
   ADD KEY `id_cat` (`id_cat`);
 
 --
--- Indexes for table `utilisateur`
+-- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `administrateur`
+-- AUTO_INCREMENT pour la table `administrateur`
 --
 ALTER TABLE `administrateur`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `categorie`
+-- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
   MODIFY `id_cat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT for table `commande`
+-- AUTO_INCREMENT pour la table `commande`
 --
 ALTER TABLE `commande`
   MODIFY `id_cmd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
--- AUTO_INCREMENT for table `plat`
+-- AUTO_INCREMENT pour la table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT pour la table `plat`
 --
 ALTER TABLE `plat`
   MODIFY `id_plat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
--- AUTO_INCREMENT for table `utilisateur`
+-- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `commande`
+-- Contraintes pour la table `commande`
 --
 ALTER TABLE `commande`
   ADD CONSTRAINT `id_user_` FOREIGN KEY (`id_user`) REFERENCES `utilisateur` (`id_user`);
 
 --
--- Constraints for table `etre_commande`
+-- Contraintes pour la table `etre_commande`
 --
 ALTER TABLE `etre_commande`
   ADD CONSTRAINT `etre_commande_ibfk_1` FOREIGN KEY (`id_cmd`) REFERENCES `commande` (`id_cmd`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `etre_commande_ibfk_2` FOREIGN KEY (`id_plat`) REFERENCES `plat` (`id_plat`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `plat`
+-- Contraintes pour la table `plat`
 --
 ALTER TABLE `plat`
   ADD CONSTRAINT `id_cat` FOREIGN KEY (`id_cat`) REFERENCES `categorie` (`id_cat`) ON DELETE CASCADE ON UPDATE CASCADE;
