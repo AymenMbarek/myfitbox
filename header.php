@@ -192,6 +192,9 @@
                 <li class="nav-item">
                   <a href="contact.php" class="nav-link" >Contacter Nous</a>
                 </li>
+                <li class="nav-item">
+                  <a href="chat/index.php" class="nav-link" >Système de chat</a>
+                </li>
                <!-- <li class="nav-item">
                   <a href="tel:58917123" class="nav-link">
                   Besoin D'aide ? sur
